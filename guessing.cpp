@@ -156,8 +156,6 @@ public:
     return retVal;
   }
   
-  long int top() { return (last > 0 ? _myMaxHeap[0] : -1); }
-  
   void print() 
   { 
     cout << "priority queue: ";
