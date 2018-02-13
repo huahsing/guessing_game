@@ -21,6 +21,7 @@ int main () {
 
 		for(int a=0; a < N; a++) {
 			if (command[0] == 1) {
+                cout << "line " << __LINE__ << ": inserting " << command[1] << endl;
 				count++;
 				arr1[i] = command[1];//inserting elements
 				arr2[j] = command[1];
@@ -30,20 +31,28 @@ int main () {
 				j++;
 				k++;
 			} else if (command[1] == 2) {
+                cout << "line " << __LINE__ << ": removing " << command[1] << endl;
 				if ((arr1[i-1] == command[1]) && (check1 != 0)) { //top of stack check
 					i = i-1; //deleting element without actually deleting
+                    cout << "stack ";
 				} else {
 					check1 = 0;
+                    cout << "!stack ";
 				} if ((arr2[queuefront] == command[1]) && (check2 != 0)) { //for queues
 					queuefront++;
+                    cout << "queue ";
 				} else {
 					check2 = 0;
+                    cout << "!queue ";
 				} if ((arr3[prifront] == command[1]) && (check3 != 0)) { //for priority queue
 					prifront++;
 					count = count - 1; //the size of the max priority queue reduces by 1
+                    cout << "pqueue ";
 				} else {
 					check3 = 0;
+                    cout << "!pqueue ";
 				}
+                cout << endl;
 			}
 		} 
 
